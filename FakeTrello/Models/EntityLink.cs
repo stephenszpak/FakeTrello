@@ -7,5 +7,8 @@ namespace FakeTrello.Models
 {
     public class EntityLink
     {
+        public ApplicationUser TrelloUser { get; set; }
+
+        public int CardId { get; set; }
     }
 }

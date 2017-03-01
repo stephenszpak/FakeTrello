@@ -29,6 +29,6 @@ namespace FakeTrello.Models
 
         public List<Board> Boards { get; set; }  // 1 to Many (Boards) relationship
 
-        public List<EntityLink> AssignCardToUsers { get; set; }
+        public List<EntityLink> AttributingUsers { get; set; }
     }
 }

@@ -10,5 +10,7 @@ namespace FakeTrello.Models
     {
         [Key]
         public int CardId { get; set; }
+
+        public List<EntityLink> AttributingUsers { get; set; }
     }
 }
