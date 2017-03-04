@@ -27,8 +27,8 @@ namespace FakeTrello.Models
 
         public ApplicationUser BaseUser { get; set; } // 1 to 1 relationship (ApplicationUser)
 
-        public List<Board> Boards { get; set; }  // 1 to Many (Boards) relationship
+        public ICollection <Board> Boards { get; set; }  // 1 to Many (Boards) relationship
 
-        public List<EntityLink> AttributingUsers { get; set; }
+        public ICollection<EntityLink> AttributingUsers { get; set; }
     }
 }

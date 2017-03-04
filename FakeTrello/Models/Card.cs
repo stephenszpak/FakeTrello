@@ -11,6 +11,14 @@ namespace FakeTrello.Models
         [Key]
         public int CardId { get; set; }
 
-        public List<EntityLink> AttributingUsers { get; set; }
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        // Auxiliary: given a card instance,
+        // return the list it belongs to.
+        public List ListId { get; set; }
+
+        public ICollection<EntityLink> AttributingUsers { get; set; }
     }
 }

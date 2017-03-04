@@ -17,6 +17,9 @@ namespace FakeTrello.Models
         [MaxLength(255)]
         public string URL { get; set; }
 
-        public List<List> Lists { get; set; } //one to many linking to boards(one) to lists (many)
+        //auxiliary (i.e. not required to drive relationship, but helps readiblity)
+        public TrelloUser Owner { get; set; }
+
+        public ICollection<List> Lists { get; set; } //one to many linking to boards(one) to lists (many)
     }
 }

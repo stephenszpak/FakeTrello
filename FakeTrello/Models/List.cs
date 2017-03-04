@@ -14,6 +14,6 @@ namespace FakeTrello.Models
         [MaxLength(255)]
         public string Name { get; set; }
 
-        public List<Card> Cards { get; set; } // one to many link from lists to cards
+        public ICollection<Card> Cards { get; set; } // one to many link from lists to cards
     }
 }
