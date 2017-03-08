@@ -5,13 +5,12 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.DAL // DAL = Data Access Layer
 {
-    public class FakeTrelloContext
+    public class FakeTrelloContext : ApplicationDbContext
     {
-        public class MyAwesomeContext : ApplicationDbContext
-        {
-            public virtual DbSet<TrelloUser> Users { get; set; }
-        }
+   
+        public virtual DbSet<TrelloUser> Users { get; set; }
+ 
     }
 }
