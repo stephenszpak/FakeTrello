@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace FakeTrello.Models
 {
@@ -8,10 +9,15 @@ namespace FakeTrello.Models
         public int CardId { get; set; }
 
         public string Title { get; set; }
+
         public string Description { get; set; }
 
-        // Auxiliary: given a card instance,
-        // return the list it belongs to.
+        public ApplicationUser Owner { get; set; }
+       
         public List BelongsTo { get; set; }
+
+        public List<ApplicationUser> AttachedUsers { get; set; }
+
+        public List<Collaborator> Collaborators { get; set; }
     }
 }
