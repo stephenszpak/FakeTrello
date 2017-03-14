@@ -24,7 +24,9 @@ namespace FakeTrello.DAL
 
         public void AddBoard(string name, ApplicationUser owner)
         {
-            throw new NotImplementedException();
+            Board board = new Board { Name = name, Owner = owner };
+            Context.Boards.Add(board);
+            Context.SaveChanges();
         }
 
         public void AddCard(string name, int listId, string ownerId)
@@ -59,7 +61,12 @@ namespace FakeTrello.DAL
 
         public Board GetBoard(int boardId)
         {
-            throw new NotImplementedException();
+
+            Board found_board = Context.Boards.FirstOrDefault(b => b.BoardId == boardId); // Returns the first OR Null
+
+            return found_board;
+
+            Context.Boards.First(); // will throw an exception if null
         }
 
         public List<Board> GetBoardsFromUser(string userId)
