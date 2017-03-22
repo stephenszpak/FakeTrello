@@ -6,17 +6,22 @@ using FakeTrello.Models;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Configuration;
+using FakeTrello.Controllers.Contracts;
+using System.Data;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.DAL.Repository
 {
     public class BoardRepository : IBoardManager, IBoardQuery
     {
-        SqlConnection _trelloConnection;
+        IDbConnection _trelloConnection;
 
-        public BoardRepository()
+        public BoardRepository(IDbConnection trelloConnection)
         {
-            _trelloConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+            _trelloConnection = trelloConnection;
+            //_trelloConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
         }
+
+        //Add Board Method(s)
         #region Add Board Method(s)
         public void AddBoard(string name, ApplicationUser owner)
         {

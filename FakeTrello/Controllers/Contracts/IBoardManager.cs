@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.Controllers.Contracts
 {
     public interface IBoardManager
     {

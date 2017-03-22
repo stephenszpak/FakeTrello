@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using FakeTrello.Models;
+using FakeTrello.Controllers.Contracts;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.DAL.Repository
 {
     public class CardRepository : ICardRepository
     {

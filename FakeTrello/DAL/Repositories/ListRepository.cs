@@ -8,8 +8,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using FakeTrello.Controllers.Contracts;
 
-namespace FakeTrello.DAL
+namespace FakeTrello.DAL.Repository
 {
     public class ListRepository : IListRepository
     {

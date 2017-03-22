@@ -7,17 +7,20 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using FakeTrello.Models;
+using FakeTrello.Controllers.Contracts;
 
 namespace FakeTrello.Controllers
 {
     [Authorize]
     public class ManageController : Controller
     {
+        readonly IBoardManager _boardManager;
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
-        public ManageController()
+        public ManageController(IBoardManager boardManager)
         {
+            _boardManager = boardManager;
         }
 
         public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
